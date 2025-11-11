@@ -1,0 +1,10 @@
+#!/bin/sh
+
+set -e
+
+lb config noauto \
+	--distribution stable \
+	--archive-areas "main contrib non-free non-free-firmware" \
+	--debian-installer "none" \
+	--bootappend-live "boot=live components locales=fr_FR.UTF-8 keyboard-layouts=fr nomodeset" \
+	"${@}"
